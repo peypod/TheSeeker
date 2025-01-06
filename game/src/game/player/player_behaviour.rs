@@ -14,9 +14,7 @@ use theseeker_engine::physics::{
 use theseeker_engine::script::ScriptPlayer;
 
 use super::{
-    dash_icon_fx, player_dash_fx, player_new_stats_mod, AttackBundle,
-    CanStealth, DashIcon, JumpCount, KillCount, Knockback, Passives,
-    PlayerStats, Pushback, StatType, Stealthing, Whirling,
+    dash_icon_fx, player_dash_fx, player_new_stats_mod, player_pickup_interact, AttackBundle, CanStealth, DashIcon, JumpCount, KillCount, Knockback, Passives, PlayerStats, Pushback, StatType, Stealthing, Whirling
 };
 use crate::camera::CameraShake;
 use crate::game::attack::{Attack, SelfPushback, Stealthed};
@@ -46,6 +44,7 @@ impl Plugin for PlayerBehaviorPlugin {
             (
                 (gain_passives.run_if(resource_changed::<KillCount>)),
                 (
+                    player_pickup_interact,
                     player_idle.run_if(any_with_component::<Idle>),
                     player_new_stats_mod,
                     add_attack,
