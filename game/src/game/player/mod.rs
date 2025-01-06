@@ -183,15 +183,22 @@ impl Passives {
 #[derive(Debug, Eq, PartialEq, Hash, EnumIter, Clone)]
 pub enum Passive {
     /// Heal when killing an enemy
-    Absorption,
+    Bloodstone,
     /// Crit every 3rd and 5th hit when low health
-    CritResolve,
-    Backstab,
-    CrowdCtrl,
-    Unmoving,
-    Speedy,
+    FlamingHeart,
+    /// Deal extra damage when backstabbing
+    IceDagger,
+    /// Damage scaling based on number of enemies nearby
+    GlowingShard,
+    /// Crits lower cooldown of all abilities by 0.5 sec
+    ObsidionNecklace,
+    /// Increased damage while standing still, decreased while moving
+    HeavyBoots,
+    /// Move faster, get cdr, take double damage
+    SerpentRing,
+    /// Increase cdr for every consecutive hit within 3 seconds
+    FrenziedAttack,
 }
-
 fn _debug_player_states(
     query: Query<
         AnyOf<(

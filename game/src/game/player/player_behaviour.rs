@@ -14,7 +14,12 @@ use theseeker_engine::physics::{
 use theseeker_engine::script::ScriptPlayer;
 
 use super::{
-    dash_icon_fx, player_dash_fx, player_new_stats_mod, player_pickup_interact, AttackBundle, CanStealth, DashIcon, JumpCount, KillCount, Knockback, Passives, PlayerStats, Pushback, StatType, Stealthing, Whirling
+    dash_icon_fx, player_dash_fx, player_new_stats_mod, AttackBundle,
+    
+    player_pickup_interact,
+
+    CanStealth, DashIcon, JumpCount, KillCount, Knockback, Passives,
+    PlayerStats, Pushback, StatType, Stealthing, Whirling,
 };
 use crate::camera::CameraShake;
 use crate::game::attack::{Attack, SelfPushback, Stealthed};

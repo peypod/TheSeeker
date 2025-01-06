@@ -21,14 +21,14 @@ impl Plugin for PickupPlugin {
 #[derive(Component)]
 pub struct PickupDrop {
     pub p_type: PickupType,
-    pickup_timer: Timer
+//    pickup_timer: Timer
 }
 
 impl PickupDrop {
     pub fn new(p_type: PickupType) -> Self {
         Self { 
             p_type, 
-            pickup_timer : Timer::from_seconds(2.0, TimerMode::Once)
+            //pickup_timer : Timer::from_seconds(2.0, TimerMode::Once)
         }
     }
 }
@@ -42,14 +42,15 @@ pub struct PickupAssetHandles {
 pub fn load_pickup_assets(assets: Res<AssetServer>, mut commands: Commands) {
 
     let passive_mappings: Vec<(Passive, &str)> = vec![
-        (Passive::Absorption, "items/passives/Bloodstone.png"),
-        (Passive::CritResolve, "items/passives/FlamingHeart.png"),
-        (Passive::CrowdCtrl, "items/passives/GlowingShard.png"),
-        (Passive::Unmoving, "items/passives/HeavyBoots.png"),
-        (Passive::Backstab, "items/passives/IceDagger.png"),
-        //(Passive::ObsidianNecklace, "items\passives\ObsidianNecklace.png"),
-        (Passive::Speedy, "items/passives/SerpentRing.png"),
-        //(Passive::WhiteGlove, "items\passives\WhiteGlove.png"),
+
+        (Passive::Bloodstone, "items/passives/Bloodstone.png"),
+        (Passive::FlamingHeart, "items/passives/FlamingHeart.png"),
+        (Passive::IceDagger, "items/passives/IceDagger.png"),
+        (Passive::GlowingShard, "items/passives/GlowingShard.png"),
+        (Passive::ObsidionNecklace, "items/passives/ObsidionNecklace.png"),
+        (Passive::HeavyBoots, "items/passives/HeavyBoots.png"),
+        (Passive::SerpentRing, "items/passives/SerpentRing.png"),
+        (Passive::FrenziedAttack, "items/passives/FrenziedAttack.png"),
 
     ];
 
